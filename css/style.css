@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* --------------------------------------- */
+:root {
+  /* Typography */
+  --font-family: 'League Spartan', sans-serif;
+
+  /* Colors */
+  /* Theme 1 */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  /* Keys */
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --toggle-key-background: hsl(6, 63%, 50%);
+  --toggle-key-shadow: hsl(6, 70%, 34%);
+  --secondary-key-background: hsl(30, 25%, 89%);
+  --secondary-key-shadow: hsl(28, 16%, 65%);
+  /* Text */
+  --main-text: hsl(221, 14%, 31%);
+  --white-text: hsl(0, 0%, 100%);
+}
+/* ----------------------------------------- */
+
+/* Theme 1 */
+.theme-1 {
+  /* Backgrounds */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  /* Keys */
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --toggle-key-background: hsl(6, 63%, 50%);
+  --toggle-key-shadow: hsl(6, 70%, 34%);
+  --secondary-key-background: hsl(30, 25%, 89%);
+  --secondary-key-shadow: hsl(28, 16%, 65%);
+  /* Text */
+  --main-text: hsl(221, 14%, 31%);
+  --white-text: hsl(0, 0%, 100%);
+}
+
+/* Theme 2 */
+.theme-2 {
+  /* Backgrounds */
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  /* Keys */
+  --key-background: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --toggle-key-background: hsl(25, 98%, 40%);
+  --toggle-key-shadow: hsl(25, 99%, 27%);
+  --secondary-key-background: hsl(45, 7%, 89%);
+  --secondary-key-shadow: hsl(35, 11%, 61%);
+  /* Text */
+  --main-text: hsl(60, 10%, 19%);
+  --white-text: hsl(0, 0%, 100%);
+}
+
+/* Theme 3 */
+.theme-3 {
+  /* Backgrounds */
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  /* Keys */
+  --key-background: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --toggle-key-background: hsl(176, 100%, 44%);
+  --toggle-key-shadow: hsl(177, 92%, 70%);
+  --secondary-key-background: hsl(268, 47%, 21%);
+  --secondary-key-shadow: hsl(290, 70%, 36%);
+  /* Text */
+  --main-text: hsl(198, 20%, 13%);
+  --white-text: hsl(0, 0%, 100%);
+}
+/* ----------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--main-background);
+  color: var(--main-text);
+  font-size: 16px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ******************************************** */
+
+.calculator__body {
+  width: 90%;
+  max-width: 540px;
+  height: 706px;
+  /* outline: 1px solid red; */
+}
+.calculator__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-text);
+  padding-left: 7px;
+  margin-bottom: 31px;
+}
+.calculator__header--logo {
+  font-size: 32px;
+}
+.calculator__header--theme {
+  display: flex;
+  align-items: center;
+}
+.theme {
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+.theme__choise {
+  display: flex;
+  margin-left: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.theme__choise--box {
+  display: flex;
+  gap: 1.75rem;
+}
+.btn-theme {
+  cursor: pointer;
+}
+.theme__switcher {
+  width: 71px;
+  height: 26px;
+  background-color: var(--toggle-background);
+  border-radius: 13px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.theme__switcher--circle {
+  background-color: var(--toggle-key-background);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateX(0px);
+}
+
+.calculator__results {
+  width: 100%;
+  height: 128px;
+  background-color: var(--screen-background);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 40px 32px;
+  font-size: 56px;
+  color: var(--white-text);
+  margin-bottom: 24px;
+  overflow-x: scroll;
+}
+
+.calculator__keyboard {
+  width: 100%;
+  height: auto;
+  background-color: var(--screen-background);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 32px 30px;
+  border-radius: 10px;
+}
+.key {
+  flex-basis: 100px;
+  width: 101px;
+  height: 64px;
+  background-color: var(--secondary-key-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  flex-grow: 3;
+  padding-top: 5px;
+  box-shadow: 0 4px 0 var(--secondary-key-shadow);
+  transition: all 0.6s easy;
+}
+.key:active {
+  box-shadow: 0 2px 0 var(--secondary-key-shadow);;
+  transform: scale(0.99);
+}
+@media screen and (max-width: 450px) {
+  .calculator__header {
+  padding-top: 6rem;}
+  
+.calculator__keyboard {
+  width: 100%;
+  height: auto;
+  background-color: var(--screen-background);
+  display: flex;
+  gap: 20px 10px;
+  flex-wrap: wrap;
+  padding: 20px 20px;
+  border-radius: 10px;
+}
+.key {
+  flex-basis: 65px;
+  width: 40px;
+  height: 45px;
+  background-color: var(--secondary-key-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  flex-grow: 2;
+  flex-shrink: 3;
+  padding-top: 5px;
+  box-shadow: 0 4px 0 var(--secondary-key-shadow);
+  transition: all 0.6s easy;
+}
+}
+
+
+.key-del, .key-reset, .key-equale {
+  font-size: 28px;
+}
+.key-del, .key-reset {
+  background-color: var(--key-background);
+  color: var(--white-text);
+  box-shadow: 0 4px 0 var(--key-shadow);
+}
+.key-equale {
+  background-color: var(--toggle-key-background);
+  color: var(--white-text);
+  box-shadow: 0 4px 0 var(--toggle-key-shadow);
+}
